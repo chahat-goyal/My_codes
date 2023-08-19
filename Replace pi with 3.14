@@ -1,0 +1,26 @@
+#include <iostream>
+#include<string>
+using namespace std;
+string output;
+string rec(string s){
+    int n=s.size();
+    if(n==0||n==1){
+        return s;
+    }
+    if(s[0]=='p'&&s[1]=='i'){
+        output=rec(s.substr(2));
+        return "3.14"+output;
+    }
+    else
+        output=rec(s.substr(1));
+    return s[0]+output;
+}
+ 
+int main()
+{
+    string s="piabppidpi";
+    cout<<rec(s);
+
+    return 0;
+}
+
